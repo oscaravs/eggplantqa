@@ -1,0 +1,46 @@
+{
+	"lastmodifieddate": 1652138975.431,
+	"lastfoundlocation": [
+		1181,
+		150,
+		44,
+		34
+	],
+	"originalcapturelocation": [
+		1181,
+		150,
+		44,
+		34
+	],
+	"createddate": 1652138975.431,
+	"lastfounddate": 1663720968.378,
+	"testlocationdata": [
+		{
+				"connectionportnum": 3389,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[22,17]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown RDP"
+				},
+				"name": "hamburger_menu.png",
+				"connectionname": "Windows 10",
+				"type": 1,
+				"capturerect": [
+					1181,
+					150,
+					44,
+					34
+				],
+				"connectiontype": "RDP",
+				"connectionserverid": "10.129.51.61"
+			}
+	],
+	"name": "hamburger_menu"
+}

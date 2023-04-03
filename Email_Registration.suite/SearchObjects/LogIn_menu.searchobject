@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		974,
+		235,
+		76,
+		28
+	],
+	"lastmodifieddate": 1652138853.3080001,
+	"createddate": 1652138853.3080001,
+	"name": "LogIn_menu",
+	"lastfounddate": 1658368893.7610002,
+	"ocrcapturestring": "Log In",
+	"lastfoundlocation": [
+		974,
+		269,
+		76,
+		28
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 3389,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[38,14]",
+					"Tolerance": "_31",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown RDP"
+				},
+				"name": "LogIn_menu.png",
+				"connectionname": "Windows 10",
+				"type": 1,
+				"connectionserverid": "10.129.51.61",
+				"capturerect": [
+					974,
+					235,
+					76,
+					28
+				],
+				"connectiontype": "RDP",
+				"capturedocrtext": "Log In"
+			}
+	]
+}
