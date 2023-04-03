@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		979,
+		169,
+		70,
+		21
+	],
+	"lastmodifieddate": 1647397992.392,
+	"createddate": 1647397992.392,
+	"name": "MyEcards/MyEcards_new",
+	"lastfounddate": 1663705049.1040001,
+	"ocrcapturestring": "Ecards",
+	"lastfoundlocation": [
+		978,
+		203,
+		70,
+		21
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 3389,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[35,10]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown RDP"
+				},
+				"name": "MyEcards/MyEcards_new.png",
+				"connectionname": "Windows 10",
+				"type": 1,
+				"connectionserverid": "10.129.51.61",
+				"capturerect": [
+					979,
+					169,
+					70,
+					21
+				],
+				"connectiontype": "RDP",
+				"capturedocrtext": "Ecards"
+			}
+	]
+}
