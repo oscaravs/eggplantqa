@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		975,
+		205,
+		124,
+		44
+	],
+	"lastmodifieddate": 1658263797.825,
+	"createddate": 1658263797.825,
+	"name": "SignUpButton/SignUpButton_new",
+	"lastfounddate": 1663694632.483,
+	"ocrcapturestring": "Sign Up",
+	"lastfoundlocation": [
+		975,
+		205,
+		124,
+		44
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 3389,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[62,22]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown RDP"
+				},
+				"name": "SignUpButton/SignUpButton_new.png",
+				"connectionname": "Windows 10",
+				"type": 1,
+				"connectionserverid": "10.129.51.61",
+				"capturerect": [
+					975,
+					205,
+					124,
+					44
+				],
+				"connectiontype": "RDP",
+				"capturedocrtext": "Sign Up"
+			}
+	]
+}
