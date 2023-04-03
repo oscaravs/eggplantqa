@@ -1,7 +1,7 @@
-﻿Log "Test Name: [Verify click on Title takes to CVP]"
+Log "Test Name: [Verify click on Title takes to CVP]"
 Log "Test Objective:[Test verifies that clicking on a created eCard title takes the user to CVP screen]"
 Log "Last Updated By: Oscar Vidal"
-Log "Last Updated: 09/20/2022"
+Log "Last Updated: 04/03/2023"
 
 
 Try
