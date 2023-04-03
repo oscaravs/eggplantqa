@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		740,
+		972,
+		204,
+		12
+	],
+	"lastmodifieddate": 1647398609.8429999,
+	"createddate": 1647398609.8429999,
+	"name": "scheduledCancelStatus/scheduledCancelStatus_new",
+	"lastfounddate": 1648007291.211,
+	"ocrcapturestring": "scnedu ed Cancel",
+	"lastfoundlocation": [
+		740,
+		972,
+		204,
+		12
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 3389,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[102,6]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown RDP"
+				},
+				"name": "scheduledCancelStatus/scheduledCancelStatus_new.png",
+				"connectionname": "Windows 10",
+				"type": 1,
+				"connectionserverid": "10.129.51.61",
+				"capturerect": [
+					740,
+					972,
+					204,
+					12
+				],
+				"connectiontype": "RDP",
+				"capturedocrtext": "scnedu ed Cancel"
+			}
+	]
+}
