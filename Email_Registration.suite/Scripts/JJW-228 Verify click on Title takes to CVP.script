@@ -1,0 +1,83 @@
+﻿Log "Test Name: [Verify click on Title takes to CVP]"
+Log "Test Objective:[Test verifies that clicking on a created eCard title takes the user to CVP screen]"
+Log "Last Updated By: Oscar Vidal"
+Log "Last Updated: 09/20/2022"
+
+
+Try
+	TypeText ControlDown,Escape,ControlUp
+	wait 2
+	put "kill existing chrome instances" into logMessage
+	log logMessage
+	TypeText "C:\killChrome.bat"
+	TypeText enterKey
+	wait 5
+	TypeText ControlDown,Escape,ControlUp
+	wait 2
+	put "starting chrome and go to QA env" into logMessage
+	log logMessage
+	TypeText "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe cf-static-qa-phoenix.jibjab.com --incognito --start-maximized"
+	//TypeText "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe cf-static-qa-phoenix.jibjab.com --start-maximized"
+	TypeText enterKey
+	wait 5
+	//Use this to clear the Chrome Restore Page prompt if it's there
+	if imagefound (imageName: "chromeRestore", waitFor:5) then
+		log "Found chromeRestore so clicking it"
+		Click (Image:"chromeRestore")
+	end if
+	
+	//******************************************
+	//Start Test Below
+	//******************************************
+	put "[Click Menu and Log in buttons to access the Login screen]" into logMessage
+	log logMessage
+	Click (Image:"MenuIcon", WaitFor:5)
+	Wait 5
+	Capturescreen {increment:true}
+	put "[Logging into a user account with previously created eCards]" into logMessage
+	log logMessage
+	Click {Text:"Log In", WaitFor:5}
+	wait 2
+	CaptureScreen {increment:true}
+	put "Enter Login Credentials" into logMessage
+	log logMessage
+	TypeText "eggplanttestaccountwithecards@jj.com" 
+	TypeText tab
+	TypeText "123456"
+	Capturescreen {increment:true}
+	Wait 2
+	put "[Logging into the  account]" into logMessage
+	log logMessage
+	TypeText returnKey
+	Wait 5
+	Capturescreen {increment:true}
+	put "[Verify that Ecards appear on My Ecards section]" into logMessage
+	log logMessage
+	Click (Image:"MenuIcon", WaitFor:3)
+	Wait 2
+	Click (Image:"MyEcards",WaitFor:2)
+	CaptureScreen {increment:true}
+	Wait 3
+	WaitFor 5, "MakeAnotherButton"
+	put "[Verify that user is sent to the CVP screen after clicking on eCard title]" into logMessage
+	log logMessage
+	Click (Image:"eCardTitle",WaitFor:3)
+	Wait 5
+	Waitfor 3, "CVPShareButton"
+	MoveTo Image: ("CVPShareButton")
+	CaptureScreen {increment:true}
+	TypeText altkey,f4
+	
+	
+	//******************************************
+	//End Test
+	//******************************************
+	
+	
+Catch
+	CaptureScreen {increment:true}
+	wait 2
+	//clean up, close Chrome
+	TypeText altKey,F4
+	throw "Failed at: " , logMessage
+End Try	

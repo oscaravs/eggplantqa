@@ -1,0 +1,65 @@
+﻿Log "Test Name: [Create new account with blank email address]"
+Log "Test Objective:[Test verifies that a new user account can't be created without an email address]"
+Log "Last Updated By: Oscar Vidal"
+Log "Last Updated: 09/20/2022"
+
+Try
+	TypeText ControlDown,Escape,ControlUp
+	wait 2
+	put "kill existing chrome instances" into logMessage
+	log logMessage
+	TypeText "C:\killChrome.bat"
+	TypeText enterKey
+	wait 5
+	TypeText ControlDown,Escape,ControlUp
+	wait 2
+	put "starting chrome and go to QA env" into logMessage
+	log logMessage
+	TypeText "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe cf-static-qa-phoenix.jibjab.com --incognito --start-maximized"
+	//TypeText "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe cf-static-qa-phoenix.jibjab.com --start-maximized"
+	TypeText enterKey
+	wait 5
+	//Use this to clear the Chrome Restore Page prompt if it's there
+	if imagefound (imageName: "chromeRestore", waitFor:5) then
+		log "Found chromeRestore so clicking it"
+		Click (Image:"chromeRestore")
+	end if
+	
+	//******************************************
+	//Start Test Below
+	//******************************************
+	put "[Click Menu and Sign up buttons to access the registration screen]" into logMessage
+	log logMessage
+	Click {Image:"MenuIcon", WaitFor:5}
+	Wait 5
+	Capturescreen {increment:true}
+	Click {Image:"SignUpButton", WaitFor:5}
+	Wait 5
+	put "[Filling the password field without an email address and then trying to create a new account]" into logMessage
+	log logMessage
+	Click (Image:"CreatePasswordLink", WaitFor:2)
+	TypeText "1Qaz2wsx3ed!"
+	Capturescreen {increment:true}
+	ScrollWheelDown
+	put "[Validate sign up button is deactivated and end test]" into logMessage
+	log logMessage
+	MoveTo (Image:"DeactivatedConfirmationButton",WaitFor:5)
+	Wait 3
+	Capturescreen {increment:true}
+	TypeText altkey,f4
+	
+	
+	
+	//******************************************
+	//End Test
+	//******************************************
+	
+	
+Catch
+	CaptureScreen {increment:true}
+	wait 2
+	//clean up, close Chrome
+	TypeText altKey,F4
+	throw "Failed at: " , logMessage
+End Try	
+

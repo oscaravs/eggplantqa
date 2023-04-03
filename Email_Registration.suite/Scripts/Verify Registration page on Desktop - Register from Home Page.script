@@ -1,0 +1,61 @@
+﻿Log "Test Name: [Verify Registration page on Desktop - Register from Home Page]"
+Log "Test Objective:[Test verifies items displayed on Registration Page on Desktop when user sign up from Home Page]"
+Log "Last Updated By: Oscar Vidal"
+Log "Last Updated: 09/20/2022"
+
+
+Try
+	TypeText ControlDown,Escape,ControlUp
+	wait 2
+	put "kill existing chrome instances" into logMessage
+	log logMessage
+	TypeText "C:\killChrome.bat"
+	TypeText enterKey
+	wait 5
+	TypeText ControlDown,Escape,ControlUp
+	wait 2
+	put "starting chrome and go to QA env" into logMessage
+	log logMessage
+	TypeText "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe cf-static-qa-phoenix.jibjab.com --incognito --start-maximized"
+	//TypeText "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe cf-static-qa-phoenix.jibjab.com --start-maximized"
+	TypeText enterKey
+	wait 5
+	//Use this to clear the Chrome Restore Page prompt if it's there
+	if imagefound (imageName: "chromeRestore", waitFor:5) then
+		log "Found chromeRestore so clicking it"
+		Click (Image:"chromeRestore")
+	end if
+	
+	//******************************************
+	//Start Test Below
+	//******************************************
+	put "[Click Menu and Sign up buttons to access the registration screen]" into logMessage
+	log logMessage
+	Click {Image:"MenuIcon", WaitFor:3}
+	Wait 6
+	Capturescreen {increment:true}
+	Click {Image:"SignUpButton"}
+	Wait 6
+	put "[Verify items are displayed on registration screen]" into logMessage
+	log logMessage
+	WaitFor 5,  "ConfirmationButton"
+	MoveTo (Image:"EmailAddressTxt", WaitFor:4)
+	MoveTo (Image:"ConfirmEmailAdressTxt", WaitFor:2)
+	MoveTo (Image:"CreatePasswordLink", WaitFor:2)
+	Capturescreen {increment:true}
+	TypeText altkey,f4
+	
+	
+	//******************************************
+	//End Test
+	//******************************************
+	
+	
+Catch
+	CaptureScreen {increment:true}
+	wait 2
+	//clean up, close Chrome
+	TypeText altKey,F4
+	throw "Failed at: " , logMessage
+End Try	
+
