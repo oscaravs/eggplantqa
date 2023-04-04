@@ -1,7 +1,7 @@
-﻿Log "Test Name: [Create New Account Successfully]", (Image:"SignUpButton/SignUpButton", WaitFor:37)
+Log "Test Name: [Create New Account Successfully]", (Image:"SignUpButton/SignUpButton", WaitFor:37)
 Log "Test Objective:[Test verifies that a new user account can be created]"
 Log "Last Updated By: Oscar Vidal"
-Log "Last Updated: 09/20/2022"
+Log "Last Updated: 04/03/2023"
 
 Try
 	TypeText ControlDown,Escape,ControlUp
@@ -30,8 +30,6 @@ Try
 	//******************************************
 	put "[Click Menu and Sign up buttons to access the registration screen]" into logMessage
 	log logMessage
-	Click {Image:"MenuIcon", WaitFor:5}
-	Wait 5
 	Capturescreen {increment:true}
 	Click {Image:"SignUpButton", WaitFor:5}
 	Wait 6
